@@ -1,5 +1,8 @@
 @extends ('layouts.admin')
 @section ('contenido')
+
+<?php  if (Auth::user()->tipousuario==1) {?>
+            
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Listado de Usuarios <a href="usuario/create"><button class="btn btn-success">Nuevo</button></a></h3>
@@ -32,6 +35,7 @@
 			</table>
 		</div>
 		{{$usuarios->render()}}
+<?php }?>
 	</div>
 </div>
 @push ('scripts')
@@ -39,5 +43,6 @@
 $('#liAcceso').addClass("treeview active");
 $('#liUsuarios').addClass("active");
 </script>
+
 @endpush
 @endsection

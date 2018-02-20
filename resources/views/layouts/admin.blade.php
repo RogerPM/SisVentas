@@ -117,7 +117,11 @@
                 <li id="liClientes"><a href="{{url('ventas/cliente')}}"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
-                       
+            <<?php           
+            if (Auth::user()->tipousuario==1) {
+          
+            ?>
+
             <li id="liAcceso" class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> <span>Acceso</span>
@@ -128,6 +132,9 @@
                 
               </ul>
             </li>
+
+            <?php }?>
+
              <li>
               <a href="https://espolec-my.sharepoint.com/:w:/r/personal/josdamor_espol_edu_ec/_layouts/15/Doc.aspx?sourcedoc=%7Be5b78319-3591-4c6b-8fa1-7e53f44682d0%7D&action=edit" target="_blank">
                 <i class="fa fa-plus-square"></i> <span>Documento</span>

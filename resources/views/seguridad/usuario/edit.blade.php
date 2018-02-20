@@ -1,5 +1,6 @@
 @extends ('layouts.admin')
 @section ('contenido')
+<?php  if (Auth::user()->tipousuario==1) {?>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<h3>Editar Usuario: {{ $usuario->name}}</h3>
@@ -43,6 +44,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="cargo" class="col-md-4 control-label">Cargo</label>
+
+                            <div class="col-md-6">
+                                <select name="cargo" class="form-control">
+                                       <option value="1">Administrador</option>
+                                       <option value="2">Cajero</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -76,7 +88,7 @@
             </div>
 
 			{!!Form::close()!!}		
-            
+ <?php }?>             
 		</div>
 	</div>
 @push ('scripts')
